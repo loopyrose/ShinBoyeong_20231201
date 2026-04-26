@@ -75,6 +75,7 @@ function draw() {
   //시스템
 
   //배경&UI
+  drawPoint();
   drawMap();
 
   //조작
@@ -305,6 +306,16 @@ function drawMap() {
   endShape();
 }
 
+function drawPoint() {
+  fill(255,255,0);
+  noStroke();
+  for(let py = 50; py < height; py += 120){
+    for(let px = 50; px < width; px += 120){
+      ellipse(px, py, 20);
+    }
+  }
+}
+
 function drawPlayer() {
   fill(255,255,0);
   noStroke();
@@ -315,7 +326,7 @@ function drawPlayer() {
 }
 
 function hitCheck(nx,ny) {
-  let r = hitboxS/2
+  let r = hitboxS/2;
   for(let wall of walls) {
     if(
       nx+r > wall.x &&
@@ -348,8 +359,11 @@ function movePlayer() {
   }
 
   //충돌검사
-  if(!hitCheck(x+dx,y)){
-    
+  if(!hitCheck(x+dx, y)) {
+    x += dx;
+  }
+  if(!hitCheck(x, y+dy)) {
+    y += dy;
   }
 
   //화면 연결
