@@ -209,7 +209,34 @@ function drawMap() {
     vertex(1220,365);
     vertex(1590,365);
     vertex(1590,425);
-    vertex();
+    vertex(1450,425);
+    vertex(1450,585);
+    vertex(1370,585);
+    vertex(1370,425);
+    vertex(1220,425);
+    vertex(1220,365);
+  endShape();
+
+  beginShape();
+    vertex(1680,365);
+    vertex(1750,365);
+    vertex(1750,520);
+    vertex(1950,520);
+    vertex(1950,580);
+    vertex(1750,580);
+    vertex(1750,725);
+    vertex(1680,725);
+    vertex(1680,580);
+    vertex(1520,580);
+    vertex(1520,520);
+    vertex(1680,520);
+    vertex(1680,365);
+  endShape();
+
+  beginShape();
+    vertex(1840,365);
+    vertex(2120,365);
+    vertex(2120,575);
     vertex();
     vertex();
     vertex();
