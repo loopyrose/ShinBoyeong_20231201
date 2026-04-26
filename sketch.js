@@ -1,13 +1,8 @@
-let map;
 let walls=[];
 
 let x,y;
 let speed=5;
 let playerS=60;
-
-function preload() {
-  map=loadImage("Map.png"); //2816*1536
-}
 
 function setup() {
   createCanvas(2816,1536);
@@ -75,10 +70,11 @@ function setup() {
 }
 
 function draw() {
-  image(map,0,0);
+  background(0,0,100);
   //시스템
 
   //배경&UI
+  drawMap();
 
   //조작
   drawPlayer();
@@ -94,7 +90,7 @@ function addWall(wx,wy,ww,wh) {
 }
 
 function drawMap() {
-  fill(255,0,0,100);
+  fill(0);
   noStroke();
 
   for(let wall of walls) {
@@ -116,15 +112,43 @@ function drawMap() {
     vertex(580,500);
     vertex(380,500);
     vertex(380,90);
-    vertex();
-    vertex();
-    vertex();
-    vertex();
-    vertex();
-    vertex();
-    vertex();
-    vertex();
-    vertex();
+    vertex(1370,90);
+    vertex(1370,270);
+    vertex(1450,270);
+    vertex(1450,90);
+    vertex(2440,90);
+    vertex(2440,500);
+    vertex(2240,500);
+    vertex(2240,720);
+    vertex(2816,720);
+  endShape();
+  line(0,700,580,700);
+  beginShape();
+    vertex(580,520);
+    vertex(360,520);
+    vertex(360,70);
+    vertex(2460,70);
+    vertex(2460,520);
+    vertex(2240,520);
+  endShape();
+  line(2240,700,2816,700);
+
+  beginShape();
+  vertex(0,810);
+  vertex(580,810);
+  vertex();
+  vertex();
+  vertex();
+  vertex();
+  vertex();
+  vertex();
+  vertex();
+  vertex();
+  vertex();
+  vertex();
+  vertex();
+  vertex();
+  vertex();
   endShape();
 }
 
