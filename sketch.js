@@ -313,7 +313,10 @@ function drawPoint() {
   noStroke();
   for(let py = 50; py < height; py += 70){
     for(let px = 50; px < width; px += 100){
-      ellipse(px, py, 20);
+      if(!hitCheck(px,py)){
+        ellipse(px, py, 20);
+      }
+      
     }
   }
 }
