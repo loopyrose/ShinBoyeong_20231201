@@ -1,4 +1,5 @@
 let walls=[];
+let points=[];
 let score, energe;
 
 let x,y;
@@ -313,13 +314,23 @@ function drawMap() {
 }
 
 function drawPoint() {
-  fill(255,255,0);
-  noStroke();
   for(let py = 50; py < height; py += 70){
     for(let px = 50; px < width; px += 100){
       if(!hitCheck(px,py)){
-        ellipse(px, py, 20);
+        points.push({
+          x : px,
+          y : py,
+          eat : false
+        }) ;
       }
+    }
+  }
+  fill(255,255,0);
+  noStroke();
+
+  for(let point of points) {
+    if(!point.eat) {
+      ellipse(point.x, point.y, 20);
     }
   }
 }
