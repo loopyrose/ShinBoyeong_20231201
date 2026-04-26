@@ -1,8 +1,13 @@
+let map;
+
+function preload() {
+  map=loadImage("Map.png"); //2816*1536
+}
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(2816,1536);
 }
 
 function draw() {
-  background(220);
-  rect(10,10,10);
+  image(map,0,0);
 }
