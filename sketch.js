@@ -119,8 +119,9 @@ function scoreSystem() {
     if(!point.eat){
       let d = dist(x,y,point.x,point.y);
 
-      if(d< ){
-        
+      if(d< hitboxS/3){
+        point.eat = true;
+        score += 1;
       }
     }
   }
