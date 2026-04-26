@@ -136,20 +136,50 @@ function drawMap() {
   beginShape();
   vertex(0,810);
   vertex(580,810);
-  vertex();
-  vertex();
-  vertex();
-  vertex();
-  vertex();
-  vertex();
-  vertex();
-  vertex();
-  vertex();
-  vertex();
-  vertex();
-  vertex();
-  vertex();
+  vertex(580,1010);
+  vertex(420,1010);
+  vertex(420,1450);
+  vertex(2390,1450);
+  vertex(2390,1010);
+  vertex(2240,1010);
+  vertex(2240,810);
+  vertex(2816,810);
   endShape();
+  line(0,830,580,830);
+  beginShape();
+  vertex(580,990);
+  vertex(400,990);
+  vertex(400,1470);
+  vertex(2410,1470);
+  vertex(2410,990);
+  vertex(2240,990);
+  endShape();
+  line(2240,830,2816,830);
+
+  //내부
+  rect(455,165,170,110);
+  rect(725,165,570,110);
+  rect(1520,165,580,110);
+  rect(2190,165,170,110);
+  rect(455,365,170,60);
+  rect(2200,365,170,60);
+  rect(750,660,225,205);
+  line(925,660,925,865);
+  rect(1220,660,370,200);
+  rect(1840,660,225,205);
+  line(1890,660,1890,865);
+  rect(1070,810,70,200);
+  rect(1680,810,70,200);
+  rect(670,950,300,60);
+  rect(1840,950,300,60);
+  rect(515,1090,60,175);
+  rect(920,1090,380,50);
+  rect(1520,1090,380,50);
+  rect(2240,1090,60,175);
+  addWall(835,1210,140,60);
+  addWall(1840,1210,140,60);
+
+  
 }
 
 function drawPlayer() {
