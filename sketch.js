@@ -176,10 +176,47 @@ function drawMap() {
   rect(920,1090,380,50);
   rect(1520,1090,380,50);
   rect(2240,1090,60,175);
-  addWall(835,1210,140,60);
-  addWall(1840,1210,140,60);
+  rect(835,1210,140,60);
+  rect(1840,1210,140,60);
 
-  
+  beginShape();
+    vertex(690,365);
+    vertex(970,365);
+    vertex(970,425);
+    vertex(760,425);
+    vertex(760,575);
+    vertex(690,575);
+    vertex(690,365);
+  endShape();
+
+  beginShape();
+    vertex(1070,365);
+    vertex(1140,365);
+    vertex(1140,520);
+    vertex(1285,520);
+    vertex(1285,580);
+    vertex(1140,580);
+    vertex(1140,725);
+    vertex(1070,725);
+    vertex(1070,580);
+    vertex(855,580);
+    vertex(855,520);
+    vertex(1070,520);
+    vertex(1070,365);
+  endShape();
+
+  beginShape();
+    vertex(1220,365);
+    vertex(1590,365);
+    vertex(1590,425);
+    vertex();
+    vertex();
+    vertex();
+    vertex();
+    vertex();
+    vertex();
+  endShape();
+
 }
 
 function drawPlayer() {
