@@ -73,6 +73,7 @@ function setup() {
   addWall(1840,1210,140,60);
   addWall(515,1320,780,50);
   addWall(1520,1320,780,50);
+  addPoints();
 }
 
 function draw() {
@@ -96,6 +97,20 @@ function addWall(wx,wy,ww,wh) {
     w : ww,
     h : wh
   }) ;
+}
+
+function addPoints() {
+  for(let py = 50; py < height; py += 70){
+    for(let px = 50; px < width; px += 100){
+      if(!hitCheck(px,py)){
+        points.push({
+          x : px,
+          y : py,
+          eat : false
+        }) ;
+      }
+    }
+  }
 }
 
 function drawMap() {
@@ -314,20 +329,8 @@ function drawMap() {
 }
 
 function drawPoint() {
-  for(let py = 50; py < height; py += 70){
-    for(let px = 50; px < width; px += 100){
-      if(!hitCheck(px,py)){
-        points.push({
-          x : px,
-          y : py,
-          eat : false
-        }) ;
-      }
-    }
-  }
   fill(255,255,0);
   noStroke();
-
   for(let point of points) {
     if(!point.eat) {
       ellipse(point.x, point.y, 20);
