@@ -2,8 +2,8 @@ let walls=[];
 
 let x,y;
 let speed=5;
-let playerS=60;
-let hitboxS=50;
+let playerS=50;
+let hitboxS=40;
 
 function setup() {
   createCanvas(2816,1536);
@@ -67,7 +67,8 @@ function setup() {
   addWall(1390,1210,50,160);
   addWall(1680,1210,70,160);
   addWall(1840,1210,140,60);
-  addWall(515, 1320,780,50);
+  addWall(515,1320,780,50);
+  addWall(1520,1320,780,50);
 }
 
 function draw() {
@@ -267,6 +268,7 @@ function drawMap() {
     vertex(1070,1320);
     vertex(1070,1210);
     vertex(1140,1210);
+    vertex(1140,1320);
     vertex(1295,1320);
     vertex(1295,1370);
     vertex(515,1370);
@@ -309,8 +311,8 @@ function drawMap() {
 function drawPoint() {
   fill(255,255,0);
   noStroke();
-  for(let py = 50; py < height; py += 120){
-    for(let px = 50; px < width; px += 120){
+  for(let py = 50; py < height; py += 70){
+    for(let px = 50; px < width; px += 100){
       ellipse(px, py, 20);
     }
   }
