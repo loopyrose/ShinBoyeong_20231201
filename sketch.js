@@ -1,4 +1,5 @@
 let walls=[];
+let score, energe;
 
 let x,y;
 let speed=5;
@@ -10,6 +11,8 @@ function setup() {
 
   x = width / 2;
   y = height /2 + 145;
+  score=0;
+  energe=30;
 
   //벽 값 추가
   //외
@@ -78,6 +81,7 @@ function draw() {
   //배경&UI
   drawPoint();
   drawMap();
+  drawUI();
 
   //조작
   drawPlayer();
@@ -316,18 +320,24 @@ function drawPoint() {
       if(!hitCheck(px,py)){
         ellipse(px, py, 20);
       }
-      
     }
   }
+}
+
+function drawUI() {
+  noStroke();
+  textStyle(BOLD);
+  textSize(28);
+  fill(255);
+
+  text("S C O R E : "+score, 50, 100);
+  text("E N E R G E : "+ energe ,50, 150);
 }
 
 function drawPlayer() {
   fill(255,255,0);
   noStroke();
   ellipse(x, y, playerS);
-
-  fill(0,0,255,20);
-  rect(x,y,hitboxS);
 }
 
 function hitCheck(nx,ny) {
