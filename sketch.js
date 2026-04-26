@@ -3,6 +3,7 @@ let walls=[];
 let x,y;
 let speed=5;
 let playerS=60;
+let hitboxS=50;
 
 function setup() {
   createCanvas(2816,1536);
@@ -80,6 +81,7 @@ function draw() {
   drawPlayer();
   movePlayer();
 }
+
 function addWall(wx,wy,ww,wh) {
   walls.push({
     x : wx,
@@ -264,19 +266,53 @@ function drawMap() {
     vertex(1070,1320);
     vertex(1070,1210);
     vertex(1140,1210);
-    vertex();
-    vertex();
-    vertex();
-    vertex();
-    vertex();
+    vertex(1295,1320);
+    vertex(1295,1370);
+    vertex(515,1370);
+    vertex(515,1320);
+    vertex(670,1320);
+    vertex(670,1090);
   endShape();
 
+  beginShape();
+    vertex(1220,1210);
+    vertex(1590,1210);
+    vertex(1590,1250);
+    vertex(1440,1250);
+    vertex(1440,1370);
+    vertex(1390,1370);
+    vertex(1390,1250);
+    vertex(1220,1250);
+    vertex(1220,1210);
+  endShape();
+
+  beginShape();
+    vertex(1980,1090);
+    vertex(2150,1090);
+    vertex(2150,1320);
+    vertex(2300,1320);
+    vertex(2300,1370);
+    vertex(1520,1370);
+    vertex(1520,1320);
+    vertex(1680,1320);
+    vertex(1680,1210);
+    vertex(1750,1210);
+    vertex(1750,1320);
+    vertex(2050,1320);
+    vertex(2050,1140);
+    vertex(1980,1140);
+    vertex(1980,1090);
+  endShape();
 }
 
 function drawPlayer() {
   fill(255,255,0);
   noStroke();
   ellipse(x, y, playerS);
+}
+
+function hitCheck() {
+
 }
 
 function movePlayer() {
