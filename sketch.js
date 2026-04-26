@@ -79,6 +79,7 @@ function setup() {
 function draw() {
   background(0,0,100);
   //시스템
+  scoreSystem();
 
   //배경&UI
   drawPoint();
@@ -108,6 +109,18 @@ function addPoints() {
           y : py,
           eat : false
         }) ;
+      }
+    }
+  }
+}
+
+function scoreSystem() {
+  for(let point of points) {
+    if(!point.eat){
+      let d = dist(x,y,point.x,point.y);
+
+      if(d< ){
+        
       }
     }
   }
