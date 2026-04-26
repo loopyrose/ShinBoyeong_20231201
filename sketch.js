@@ -309,10 +309,24 @@ function drawPlayer() {
   fill(255,255,0);
   noStroke();
   ellipse(x, y, playerS);
+
+  fill(0,0,255,20);
+  rect(x,y,hitboxS);
 }
 
-function hitCheck() {
-
+function hitCheck(nx,ny) {
+  let r = hitboxS/2
+  for(let wall of walls) {
+    if(
+      nx+r > wall.x &&
+      nx-r < wall.x+wall.w &&
+      ny+r > wall.y &&
+      ny-r < wall.y+wall.h
+    ){
+      return true;
+    }
+  }
+  return false;
 }
 
 function movePlayer() {
@@ -331,6 +345,11 @@ function movePlayer() {
   }
   if (keyIsDown(68) || keyIsDown(RIGHT_ARROW)) {
     dx += speed;
+  }
+
+  //충돌검사
+  if(!hitCheck(x+dx,y)){
+    
   }
 
   //화면 연결
