@@ -93,7 +93,7 @@ function draw() {
   drawPlayer();
   movePlayer();
   } else {
-    if(gameWin=1){
+    if(gameWin==1){
       textSize(50);
       textAlign(CENTER);
       textStyle(BOLD);
@@ -104,15 +104,23 @@ function draw() {
       textStyle(NORMAL);
       text("스페이스를 눌러 게임을 재시작",width/2,height/2+500);
       if(keyIsDown(32)){
-        gameOn=true;
-        gameWin=0
+        restart();
       }
-    } else if(gameWin=2){
-
-    }
-    
+    } else if(gameWin==2){
+      textSize(50);
+      textAlign(CENTER);
+      textStyle(BOLD);
+      fill(255);
+      text("S C O R E : "+score,width/2,height/2);
+      text("모든 에너지를 잃었습니다",width/2,height/2+140);
+      textSize(30);
+      textStyle(NORMAL);
+      text("스페이스를 눌러 게임을 재시작",width/2,height/2+500);
+      if(keyIsDown(32)){
+        restart();
+      }
+    } 
   }
-
 }
 
 function addWall(wx,wy,ww,wh) {
@@ -136,6 +144,18 @@ function addPoints() {
       }
     }
   }
+}
+
+function restart(){
+  score=0;
+  energe=30;
+  x = width / 2;
+  y = height /2 + 145;
+  gameOn=true;
+  gameWin=0;
+
+  points = [];
+  addPoints();
 }
 
 function scoreSystem() {
