@@ -103,12 +103,12 @@ function draw() {
       textSize(30);
       textStyle(NORMAL);
       text("스페이스를 눌러 게임을 재시작",width/2,height/2+500);
-      if(keyIsDown(SPACE)){
+      if(keyIsDown(32)){
         gameOn=true;
         gameWin=0
       }
     } else if(gameWin=2){
-      
+
     }
     
   }
