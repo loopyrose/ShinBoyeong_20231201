@@ -1,6 +1,8 @@
 let walls=[];
 let points=[];
 let score, energe;
+let gameOn=false;
+let gameWin=0;
 
 let x,y;
 let speed=5;
@@ -78,6 +80,7 @@ function setup() {
 
 function draw() {
   background(0,0,100);
+  if (gameOn==true) {
   //시스템
   scoreSystem();
 
@@ -89,6 +92,26 @@ function draw() {
   //조작
   drawPlayer();
   movePlayer();
+  } else {
+    if(gameWin==true){
+      textSize(50);
+      textAlign(CENTER);
+      textStyle(BOLD);
+      fill(255);
+      text("S C O R E : "+score,width/2,height/2);
+      text("You Win!",width/2,height/2+140);
+      textSize(30);
+      textStyle(NORMAL);
+      text("스페이스를 눌러 게임을 재시작",width/2,height/2+500);
+      if(key){
+
+      }
+    } else {
+
+    }
+    
+  }
+
 }
 
 function addWall(wx,wy,ww,wh) {
