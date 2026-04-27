@@ -1,8 +1,8 @@
 let walls=[];
 let points=[];
 let score, energe;
-let gameOn=false;
-let gameWin=1;
+let gameOn=true;
+let gameWin=0;
 
 let x,y;
 let speed=5;
@@ -82,6 +82,7 @@ function draw() {
   background(0,0,100);
   if (gameOn==true) {
   //시스템
+  gameSystem();
   scoreSystem();
 
   //배경&UI
@@ -156,6 +157,17 @@ function restart(){
 
   points = [];
   addPoints();
+}
+
+function gameSystem(){
+  if (score == points.length) {
+    gameOn = false;
+    gameWin = 1;
+  }
+  if (energe == 0) {
+    gameOn = false;
+    gameWin = 2;
+  }
 }
 
 function scoreSystem() {
