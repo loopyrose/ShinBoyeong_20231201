@@ -2,7 +2,7 @@ let walls=[];
 let points=[];
 let score, energe;
 let gameOn=false;
-let gameWin=0;
+let gameWin=1;
 
 let x,y;
 let speed=5;
@@ -93,7 +93,7 @@ function draw() {
   drawPlayer();
   movePlayer();
   } else {
-    if(gameWin==true){
+    if(gameWin=1){
       textSize(50);
       textAlign(CENTER);
       textStyle(BOLD);
@@ -103,11 +103,12 @@ function draw() {
       textSize(30);
       textStyle(NORMAL);
       text("스페이스를 눌러 게임을 재시작",width/2,height/2+500);
-      if(key){
-
+      if(keyIsDown(SPACE)){
+        gameOn=true;
+        gameWin=0
       }
-    } else {
-
+    } else if(gameWin=2){
+      
     }
     
   }
