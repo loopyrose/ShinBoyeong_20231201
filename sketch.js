@@ -501,10 +501,10 @@ function movePlayer() {
 
   //화면 연결
   if (x>=2816) {
-    x=1;
+    x=2;
   }
   if (x<=0) {
-    x=2815;
+    x=2814;
   }
 }
 
@@ -514,7 +514,7 @@ function moveEnemy() {
 
     let dx = x - enemy.x;
     let dy = y - enemy.y;
-    let espeed = 0.5+(1/d)*100;
+    let espeed = 0.7+(1/d)*120;
 
     enemy.x += (dx / d) * espeed;
     enemy.y += (dy / d) * espeed;
