@@ -507,5 +507,14 @@ function movePlayer() {
 }
 
 function moveEnemy() {
+  for(let enemy of enemies) {
+    let d = dist(x,y,enemy.x, enemy.y);
 
+    let dx = x - enemy.x;
+    let dy = y - enemy.y;
+    let espeed = 1+(1/d)*300
+
+    enemy.x += (dx / )
+
+  }
 }
