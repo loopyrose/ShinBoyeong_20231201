@@ -514,7 +514,7 @@ function moveEnemy() {
 
     let dx = x - enemy.x;
     let dy = y - enemy.y;
-    let espeed = 0.7+(1/d)*120;
+    let espeed = 0.7+(1/d)*150;
 
     enemy.x += (dx / d) * espeed;
     enemy.y += (dy / d) * espeed;
