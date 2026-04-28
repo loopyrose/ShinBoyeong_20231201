@@ -1,6 +1,6 @@
 let walls=[];
 let points=[];
-let enemys=[];
+let enemies=[];
 
 let score, energe;
 let gameOn=true;
@@ -80,8 +80,8 @@ function setup() {
   addWall(515,1320,780,50);
   addWall(1520,1320,780,50);
   addPoints();
-  for (let i = 0; i <) {
-    
+  for (let i = 0; i < 5; i++) {
+    addEnemy();
   }
 }
 
@@ -97,6 +97,7 @@ function draw() {
   drawMap();
   drawUI();
   drawEnemy();
+  moveEnemy();
 
   //조작
   drawPlayer();
@@ -174,7 +175,11 @@ function restart(){
   gameWin=0;
 
   points = [];
+  enemies = [];
   addPoints();
+  for (let i = 0; i < 5; i++) {
+    addEnemy();
+  }
 }
 
 function gameSystem(){
@@ -437,7 +442,12 @@ function drawUI() {
 }
 
 function drawEnemy(){
+  fill(255,0,0);
+  noStroke();
 
+  for(let enemy of enemies){
+    ellipse(enemy.x, enemy.y, enemyS);
+  }
 }
 
 function drawPlayer() {
