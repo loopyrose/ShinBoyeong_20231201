@@ -11,7 +11,6 @@ let speed=5;
 let playerS=50;
 let hitboxS=40;
 let enemyS=60;
-let espeed;
 
 function setup() {
   createCanvas(2816,1536);
@@ -163,6 +162,7 @@ function addEnemy() {
   enemies.push({
     x : ex,
     y : ey,
+    hit : false
   });
 }
 
@@ -446,7 +446,9 @@ function drawEnemy(){
   noStroke();
 
   for(let enemy of enemies){
+    if(!enemy.hit){
     ellipse(enemy.x, enemy.y, enemyS);
+    }
   }
 }
 
@@ -512,9 +514,20 @@ function moveEnemy() {
 
     let dx = x - enemy.x;
     let dy = y - enemy.y;
-    let espeed = 1+(1/d)*300
+    let espeed = 1+(1/d)*300;
 
-    enemy.x += (dx / )
+    enemy.x += (dx / d) * espeed;
+    enemy.y += (dy / d) * espeed;
+  }
 
+  for(let enemy of enemies){
+    if(!enemy.hit){
+      let d = dist(x,y,enemy.x,enemy.y);
+
+      if(d < enemyS/3){
+        enemy.hit = true;
+        energe -= 10;
+      }
+    }
   }
 }
