@@ -1,5 +1,7 @@
 let walls=[];
 let points=[];
+let enemys=[];
+
 let score, energe;
 let gameOn=true;
 let gameWin=0;
@@ -8,6 +10,8 @@ let x,y;
 let speed=5;
 let playerS=50;
 let hitboxS=40;
+let enemyS=60;
+let espeed;
 
 function setup() {
   createCanvas(2816,1536);
@@ -76,6 +80,9 @@ function setup() {
   addWall(515,1320,780,50);
   addWall(1520,1320,780,50);
   addPoints();
+  for (let i = 0; i <) {
+    
+  }
 }
 
 function draw() {
@@ -89,6 +96,7 @@ function draw() {
   drawPoint();
   drawMap();
   drawUI();
+  drawEnemy();
 
   //조작
   drawPlayer();
@@ -145,6 +153,16 @@ function addPoints() {
       }
     }
   }
+}
+
+function addEnemy() {
+  let ex = random(0, width);
+  let ey = random(0, height);
+
+  enemies.push({
+    x : ex,
+    y : ey,
+  });
 }
 
 function restart(){
@@ -414,8 +432,12 @@ function drawUI() {
   textSize(28);
   fill(255);
 
-  text("S C O R E : "+score, 50, 100);
+  text("S C O R E : "+ score, 50, 100);
   text("E N E R G E : "+ energe ,50, 150);
+}
+
+function drawEnemy(){
+
 }
 
 function drawPlayer() {
@@ -472,4 +494,8 @@ function movePlayer() {
   if (x<=0) {
     x=2815;
   }
+}
+
+function moveEnemy() {
+
 }
