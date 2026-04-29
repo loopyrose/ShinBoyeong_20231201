@@ -455,7 +455,17 @@ function drawEnemy(){
 function drawPlayer() {
   fill(255,255,0);
   noStroke();
-  ellipse(x, y, playerS);
+  if(keyIsDown(87) || keyIsDown(UP_ARROW)){
+    arc(x, y, playerS, playerS, PI*, PI*);
+  } else if(keyIsDown(83) || keyIsDown(DOWN_ARROW)){
+
+  } else if(keyIsDown(65) || keyIsDown(LEFT_ARROW)){
+    
+  }else if(keyIsDown(68) || keyIsDown(RIGHT_ARROW)){
+    arc(x, y, playerS, playerS, PI*0.25, PI*1.75);
+  } else {
+     ellipse(x, y, playerS); 
+  }
 }
 
 function hitCheck(nx,ny) {
