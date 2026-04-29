@@ -10,7 +10,7 @@ let x,y;
 let speed=5;
 let playerS=50;
 let hitboxS=40;
-let enemyS=60;
+let enemyS=70;
 
 function setup() {
   createCanvas(2816,1536);
@@ -456,11 +456,11 @@ function drawPlayer() {
   fill(255,255,0);
   noStroke();
   if(keyIsDown(87) || keyIsDown(UP_ARROW)){
-    arc(x, y, playerS, playerS, PI*, PI*);
+    arc(x, y, playerS, playerS, PI*1.75, PI*1.25);
   } else if(keyIsDown(83) || keyIsDown(DOWN_ARROW)){
-
+    arc(x, y, playerS, playerS, PI*0.75, PI*0.25);
   } else if(keyIsDown(65) || keyIsDown(LEFT_ARROW)){
-    
+    arc(x, y, playerS, playerS, PI*1.25, PI*0.75);
   }else if(keyIsDown(68) || keyIsDown(RIGHT_ARROW)){
     arc(x, y, playerS, playerS, PI*0.25, PI*1.75);
   } else {
